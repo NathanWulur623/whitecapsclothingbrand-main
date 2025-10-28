@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="theStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<padding>
+    <h1 class="slogan">
+      Elegance woven from Nature.
+    </h1>
+  </padding>
+<header>
+    <a href="Home.html" class="homebutton">
+      <img class="homelogo" src="White Caps Images/WhiteCapsCircleLogo.png" alt="logo" height="80px" width="80px">
+    </a>
+    <nav class="navbar">
+      <ul class="nav_links">
+        <li><a href="Shop.html">Shop</a></li>
+  
+        <li><a href="NewAboutUs.html">About</a></li>
+        <li><a href="donation.html">Fundraiser</a></li>
+        
+      </ul>
+    </nav>
+    <ul>
+      <li>
+        <a href="Contact.html" class="cta">
+          <img src="White Caps Images/phone.png" alt="phone" height="35px" width="35px">
+        </a>
+      </li>
+      <li>
+        <a href="ShoppingCart.html" class="cta">
+          <img src="White Caps Images/cart.png" alt="cart" height="35px" width="35px">
+        </a>
+      </li>
+      <li>
+        <button onclick="openSearch()" class="cta">
+          <img src="White Caps Images/Search.png" alt="Search" height="35px" width="35px">
+        </button>
+      </li>
+      <div class="search-overlay" id="searchOverlay">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search..." oninput="searchItems()">
+            <ul class="suggestions" id="suggestions"></ul>
+            <button class="close-btn" onclick="closeSearch()">Close</button>
+        </div> 
+      </div>
+      <li>
+        <a href="inspiration.html" class="cta">
+          <img src="White Caps Images/whitelightbulb.png" alt="cart" height="35px" width="35px">
+        </a>
+      </li>
+    
+    
+  </ul>
+  </header>
+ 
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+     
+  
+      let currentIndex = 0;
+      const slideImage = document.getElementById("slide-image");
+  
+      function showPrev() {
+        currentIndex = (currentIndex - 1 + imagePaths.length) % imagePaths.length;
+        slideImage.src = imagePaths[currentIndex];
+      }
+  
+      function showNext() {
+        currentIndex = (currentIndex + 1) % imagePaths.length;
+        slideImage.src = imagePaths[currentIndex];
+      }
+  
+      // Attach functions to buttons
+      document.querySelector(".prev").addEventListener("click", showPrev);
+      document.querySelector(".next").addEventListener("click", showNext);
+    });
+  </script>
+  
+  
+  
+  
+  
+
+  
+<body>
+
+ 
+  <div class="grid-container">
+    <div class="grid-item">
+      <div class="star-item">
+       <section class="slider_container">
+  <div class="slider_wrapper">
+    <button class=".prev" onclick="changeSlide(-1)">&#10094;</button>
+    <div class="slidershorts">
+      <img class="theslide" src="White Caps Images/White Caps Clothes/White Caps Embroidered Shorts.jpg" alt="Image 1" />
+      <img class="theslide" src="White Caps Images/White Caps Clothes/shortsfront.jpg" alt="Image 2" />
+      <img class="theslide" src="White Caps Images/White Caps Clothes/shortsbottom.jpg" alt="Image 3" />
+      </div>
+  
+
+    <button class=".next" onclick="changeSlide(1)">&#10095;</button>
+  </div>
+</section>
+     
+
+      
+        <div class="product-details">
+          <center>
+            <h1 class="item-paragraph">W/C Embriodered Shorts</h1>
+            <p class="item-paragraph">$24.50</p>
+            <p class="item-paragraph">Select Size:</p>
+            <div class="size-options">
+              <br><br>
+              <button class="size" data-size="S">S</button>
+              <button class="size" data-size="M">M</button>
+              <button class="size" data-size="L">L</button>
+              <button class="size" data-size="XL">XL</button>
+            </div>
+            <button class="addtocart" onclick="addToCart('White Caps Embroidered Shorts', 24.50)">Add to Cart</button>
+          </center>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-item">
+      <p class="clothes-paragraph">These 100% organic cotton shorts are a solid piece for any casual, laid-back wardrobe.
+         The embroidery keeps things minimal but sharp, and the flower beneath it adds a nice touch of detail without overwhelming the design.
+          On the bottom right, you’ve got this graphic—stars, wavy lines, and the word ‘surf.’ It’s a clean, subtle nod to the free-spirited vibe of the ocean, but it doesn’t 
+          take over the whole look. These shorts are easy to wear, comfortable, and have just the right amount of 
+          character. 
+        They’re versatile enough for casual days or even a day at the beach, effortlessly combining style and function.</p>
+
+      <br><br>
+      <center>
+        <p style="font-family: 'Winky Sans', sans-serif;">Sizing Chart</p>
+      </center>
+
+      <style>
+        table {
+          width: 60%;
+          border-collapse: collapse;
+          margin: 20px auto;
+          text-align: center;
+          font-family: 'DM Sans', sans-serif;
+        }
+        th, td {
+          border: 1px solid black;
+          padding: 10px;
+        }
+        th {
+          background-color: #f4f4f4;
+        }
+      </style>
+
+      <table>
+        <tr>
+          <th>Size</th>
+          <th>Inseam Length (cm)</th>
+          <th>Waistline (cm)</th>
+       
+        </tr>
+        <tr class="highlight">
+          <td>S</td>
+        
+          <td>47</td>
+          <td>32</td>
+     
+        </tr>
+        <tr>
+          <td>M</td>
+      
+          <td>48.5</td>
+          <td>34</td>
+ 
+        </tr>
+        <tr>
+          <td>L</td>
+
+          <td>50</td>
+          <td>36</td>
+     
+        </tr>
+
+        <tr>
+          <td>XL</td>
+
+          <td>51.5</td>
+          <td>38</td>
+     
+        </tr>
+      </table>
+
+    </div>
+  </div>
+
+  <script>
+    // Handle size selection
+    const sizeButtons = document.querySelectorAll('.size');
+    let selectedSize = null;
+
+    sizeButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        sizeButtons.forEach(b => b.classList.remove('selected')); // Remove 'selected' class from all buttons
+        button.classList.add('selected'); // Add 'selected' class to clicked button
+        selectedSize = button.dataset.size; // Store the selected size
+      });
+    });
+
+    // Function to add to cart
+    function addToCart(item, price) {
+      if (!selectedSize) {
+        alert("Please select a size before adding to the cart.");
+        return; // Don't proceed if no size is selected
+      }
+      // Store item, price, and selected size in local storage or cart
+      const cart = JSON.parse(localStorage.getItem('shoppingCart')) || [];
+      cart.push({ item, price, size: selectedSize });
+      localStorage.setItem('shoppingCart', JSON.stringify(cart));
+      alert(`${item} (Size: ${selectedSize}) added to cart.`);
+    }
+  </script>
+
+  <footer>
+    <div class="footerContainer">
+      <div class="socialIcons">
+        <a href="https://www.instagram.com/whitecapsclothing?igsh=bHYxdnh6M3ZuZ3h4" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@whitecapsclothing?_t=ZP-8suGQp4f4f8&_r=1" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://www.youtube.com/@whitecapsclothing" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+      <div class="footerNav">
+        <ul>
+          <li>
+            <div class="circlelogo">
+              <img src="White Caps Images/WhiteCapsCircleLogo.png" height="100px" width="100px" align="left">
+            </div>
+          </li>
+          <li><a href="Home.html">Home</a></li>
+          <li><a href="NewAboutUs.html">About Us</a></li>
+          <li><a href="">Contact Information</a></li>
+        </ul>
+      </div>
+
+      <div class="footerBottom">
+        <p>Copyright &copy;2025; Designed by <span class="designer">Nathan Wulur and Rehan Saneesh</span> </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

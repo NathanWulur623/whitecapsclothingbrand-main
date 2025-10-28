@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="theStyle.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+  integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="script.js"></script>
+  <title>Product Page</title>
+</head>
+<h1 class="slogan">
+  Elegance woven from Nature
+  </h1>
+  <header>
+    <a href="Home.html" class="homebutton">
+      <img class="homelogo" src="White Caps Images/WhiteCapsCircleLogo.png" alt="logo" height="80px" width="80px">
+    </a>
+    <nav class="navbar">
+      <ul class="nav_links">
+        <li><a href="Shop.html">Shop</a></li>
+        <li><a href="NewAboutUs.html">About</a></li>
+        <li><a href="donation.html">Fundraiser</a></li>
+      </ul>
+    </nav>
+    <ul>
+      <li>
+        <a href="Contact.html" class="cta">
+          <img src="White Caps Images/phone.png" alt="phone" height="35px" width="35px">
+        </a>
+      </li>
+      <li>
+        <a href="ShoppingCart.html" class="cta">
+          <img src="White Caps Images/cart.png" alt="cart" height="35px" width="35px">
+        </a>
+      </li>
+      <li>
+        <button onclick="openSearch()" class="cta">
+          <img src="White Caps Images/Search.png" alt="Search" height="35px" width="35px">
+        </button>
+      </li>
+      <div class="search-overlay" id="searchOverlay">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search..." oninput="searchItems()">
+            <ul class="suggestions" id="suggestions"></ul>
+            <button class="close-btn" onclick="closeSearch()">Close</button>
+        </div> 
+      </div>
+      <li>
+        <a href="inspiration.html" class="cta">
+          <img src="White Caps Images/whitelightbulb.png" alt="cart" height="35px" width="35px">
+        </a>
+      </li>
+    </ul>
+  </header>
+
+<body>
+  <div class="grid-container">
+    <div class="grid-item">
+      <div class="star-item">
+        <img src="White Caps Images/White Caps Clothes/W-C Shirt.jpg" alt="W/C Shirt">
+        <div class="product-details">
+          <center>
+            <h1 class="item-paragraph">W/C Tee</h1>
+            <p class="item-paragraph">$15.00</p>
+            <p class="item-paragraph">Select Size:</p>
+            <div class="size-options">
+              <br><br>
+              <button class="size" data-size="S">S</button>
+              <button class="size" data-size="M">M</button>
+              <button class="size" data-size="L">L</button>
+              <button class="size" data-size="XL">XL</button>
+              <button class="size" data-size="XXL">XXL</button>
+              <button class="size" data-size="2XL">2XL</button>
+            </div>
+            <button class="addtocart" onclick="addToCart('W-C Shirt', 15.00)">Add to Cart</button>
+          </center>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-item">
+      <p class="clothes-paragraph">This navy blue tee is a great blend of simplicity and subtle detail. The ‘W/C’ at the front paired with ‘Allen, TX’ 
+        underneath gives it a personal touch, a little nod to a place, but it’s the clean white flower graphic that makes it stand out.
+         The contrast of white against the deep navy creates a calm, refined look that still carries a bit of character. It’s the kind of tee that pairs 
+         well with just about anything—a relaxed fit, versatile enough for layering or wearing on its own in the warmer months. The flower and wavy line graphics add a touch
+          of creativity without overpowering the overall minimalist design, 
+        making it perfect for casual days when you want to keep it effortless yet interesting. </p>
+
+      <br><br>
+      <center>
+        <p style="font-family: 'Winky Sans', sans-serif;">Sizing Chart</p>
+      </center>
+
+      <style>
+        table {
+          width: 60%;
+          border-collapse: collapse;
+          margin: 20px auto;
+          text-align: center;
+          font-family: 'DM Sans', sans-serif;
+        }
+        th, td {
+          border: 1px solid black;
+          padding: 10px;
+        }
+        th {
+          background-color: #f4f4f4;
+        }
+      </style>
+
+<table>
+  <tr>
+    <th>Size </th>        
+    <th> Length (cm)</th>
+    <th>Sleeve Length (cm)</th>
+    <th>Shoulder Width (cm)</th>
+    <th>Chest (cm)</th>
+  </tr>
+  <tr class="highlight">
+    <td>S</td>
+    <td>70</td>
+    <td>20.0</td>
+    <td>56</td>
+    <td>57</td>
+  </tr>
+  <tr>
+    <td>M</td>
+    <td>72</td>
+    <td>21</td>
+    <td>57</td>
+    <td>59</td>
+  </tr>
+  <tr>
+    <td>L</td>
+    <td>74</td>
+    <td>22</td>
+    <td>58</td>
+    <td>62</td>
+  </tr>
+  <tr>
+    <td>XL</td>
+    <td>76</td>
+    <td>23</td>
+    <td>59</td>
+    <td>64</td>
+  </tr>
+  <tr>
+    <td>2XL</td>
+    <td>78</td>
+    <td>24</td>
+    <td>60</td>
+    <td>67</td>
+  </tr>
+</table>
+
+
+    </div>
+  </div>
+
+  <script>
+    // Handle size selection
+    const sizeButtons = document.querySelectorAll('.size');
+    let selectedSize = null;
+
+    sizeButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        sizeButtons.forEach(b => b.classList.remove('selected')); // Remove 'selected' class from all buttons
+        button.classList.add('selected'); // Add 'selected' class to clicked button
+        selectedSize = button.dataset.size; // Store the selected size
+      });
+    });
+
+    // Function to add to cart
+    function addToCart(item, price) {
+      if (!selectedSize) {
+        alert("Please select a size before adding to the cart.");
+        return; // Don't proceed if no size is selected
+      }
+      // Store item, price, and selected size in local storage or cart
+      const cart = JSON.parse(localStorage.getItem('shoppingCart')) || [];
+      cart.push({ item, price, size: selectedSize });
+      localStorage.setItem('shoppingCart', JSON.stringify(cart));
+      alert(`${item} (Size: ${selectedSize}) added to cart.`);
+    }
+  </script>
+
+  <footer>
+    <div class="footerContainer">
+      <div class="socialIcons">
+        <a href="https://www.instagram.com/whitecapsclothing?igsh=bHYxdnh6M3ZuZ3h4" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+         <a href="https://www.tiktok.com/@whitecapsclothing?_t=ZP-8suGQp4f4f8&_r=1" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://www.youtube.com/@whitecapsclothing" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+      <div class="footerNav">
+        <ul>
+          <li>
+            <div class="circlelogo">
+              <img src="White Caps Images/WhiteCapsCircleLogo.png" height="100px" width="100px" align="left">
+            </div>
+          </li>
+          <li><a href="Home.html">Home</a></li>
+          <li><a href="NewAboutUs.html">About Us</a></li>
+          <li><a href="">Contact Information</a></li>
+        </ul>
+      </div>
+
+      <div class="footerBottom">
+        <p>Copyright &copy;2025; Designed by <span class="designer">Nathan Wulur and Rehan Saneesh</span> </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
